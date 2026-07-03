@@ -430,10 +430,15 @@ int main() {
     converterAFeParaAFN(&afe, &afn);
 
     //imprimirAutomato(&afe, "AFe original");
-    //imprimirAutomato(&afn, "AFN convertido");
+    imprimirAutomato(&afn, "AFN convertido");
 
     if (lerPalavraDoArquivo("D:\\projetos pessoais\\automatoLFA\\palavra.txt", palavra) == 1) {
         imprimirPalavraSeValida(&afn, palavra);
+    } else {
+        printf("Erro ao ler a palavra do arquivo.\n");
+    }
+    if (lerPalavraDoArquivo("D:\\projetos pessoais\\automatoLFA\\palavra.txt", palavra) == 1) {
+        imprimirPalavraSeValida(&afe, palavra);
     } else {
         printf("Erro ao ler a palavra do arquivo.\n");
     }
